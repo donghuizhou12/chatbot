@@ -5,6 +5,35 @@ Clone this repository, then cd web_project
 Create a virtual environment and activate it: virtualenv --python=python3.10 venv, source venv/bin/activate
 
 Install the required dependencies: pip install -r requirements.txt
+pip install django 
+pip install psycopg2-binary
+pip install openai==0.28.0
+pip install psycopg2
+
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+sudo -u postgres psql
+ALTER USER admin WITH PASSWORD 'new_password';
+CREATE USER admin WITH PASSWORD 'your_password';
+CREATE DATABASE doctor_aid;
+GRANT ALL PRIVILEGES ON DATABASE your_database_name TO admin;
+
+Update settings:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'doctor_aid',
+        'USER': 'admin',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+if you use postgresql-13, 'PORT':'5433'
+
+For superuser:
+python manage.py createsuperuser, you can update you specialists information in 127.0.0.1:8000/admin.
+
 
 Set up your OpenAI API key with export or Replace your_openai_api_key_here with your actual OpenAI API key, or input the AI_KEY in views.py
 Usage
@@ -14,3 +43,4 @@ Usage
 Run python manage.py runserver to start.
 
 127.0.0.1:8000/admin to add specialist list for your work.
+
