@@ -88,7 +88,7 @@ DATABASES = {
         'USER': 'admin',
         'PASSWORD': '1119',
         'HOST': 'localhost',  # Or the server hosting PostgreSQL
-        'PORT': '5432',  # PostgreSQL’s default port
+        'PORT': '5432',  # PostgreSQLâ€™s default port
     }
 }
 
@@ -129,6 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
