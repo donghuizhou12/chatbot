@@ -1,0 +1,16 @@
+Installation
+
+Clone this repository, then cd web_project
+
+Create a virtual environment and activate it: virtualenv --python=python3.10 venv, source venv/bin/activate
+
+Install the required dependencies: pip install -r requirements.txt
+
+Set up your OpenAI API key with export or Replace your_openai_api_key_here with your actual OpenAI API key, or input the AI_KEY in views.py
+Usage
+
+Usage
+
+Run python manage.py runserver to start.
+
+127.0.0.1:8000/admin to add specialist list for your work.

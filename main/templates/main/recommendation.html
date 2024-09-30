@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Specialist Recommendation</title>
+</head>
+<body>
+    <h1>Specialist Recommendation</h1>
+    <p>{{ summary }}</p>
+    <h2>Recommended Specialist: {{ specialist }}</h2>
+
+    {% if doctors %}
+        <h3>Available Doctors:</h3>
+        <ul>
+        {% for doctor in doctors %}
+            <li>{{ doctor.name }} - {{ doctor.available_day }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No doctors found for this specialty.</p>
+    {% endif %}
+</body>
+</html>

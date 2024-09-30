@@ -1,0 +1,9 @@
+<h1>Appointment with Dr. {{ doctor.name }}</h1>
+<p>Specialty: {{ doctor.specialty }}</p>
+<p>Available Day: {{ doctor.available_day }}</p>
+<p>Phone: {{ doctor.phone }}</p>
+
+<form method="post" action="{% url 'book_appointment' doctor.id %}">
+    {% csrf_token %}
+    <button type="submit">Book Appointment</button>
+</form>

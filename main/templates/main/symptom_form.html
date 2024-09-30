@@ -1,0 +1,7 @@
+
+<form method="POST">
+    {% csrf_token %}
+    {{ symptom_form.as_p }}
+    {{ appointment_form.as_p }}
+    <button type="submit">Submit</button>
+</form> 
